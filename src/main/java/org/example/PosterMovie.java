@@ -5,6 +5,12 @@ public class PosterMovie {
     private String movieName;
     private String ganre;
 
+    public PosterMovie(int movieId, String movieName, String ganre) {
+        this.movieId = movieId;
+        this.movieName = movieName;
+        this.ganre = ganre;
+    }
+
     public int getMovieId() {
         return movieId;
     }
@@ -30,4 +36,7 @@ public class PosterMovie {
     }
 
 
-}
+
+
+    }
+
