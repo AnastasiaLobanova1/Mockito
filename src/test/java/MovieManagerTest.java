@@ -66,18 +66,21 @@ public class MovieManagerTest {
         PosterMovie[] actual = manager2.findLast2();
         Assertions.assertArrayEquals(expected, actual);
     }
-    //@Test
-    //public void testFindLastMovieWithLimitTen() {
 
-    //    PosterMovie[] expected = new PosterMovie[]{movie10, movie9, movie8,movie7,movie6,movie5,movie4,movie3,movie2,movie1};
-    //PosterMovie[] actual = manager2.findLast2();
-    //    Assertions.assertArrayEquals(expected, actual);
-    //}
     @Test
     public void testFindLastMovie() {
 
         PosterMovie[] expected = new PosterMovie[]{movie10, movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1};
         PosterMovie[] actual = manager.findLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test //Добавление фильма 1
+    public void testFindAllMovie() {
+
+        PosterMovie[] expected = new PosterMovie[]{movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10};
+        PosterMovie[] actual = manager.findAll();
+
         Assertions.assertArrayEquals(expected, actual);
     }
 
