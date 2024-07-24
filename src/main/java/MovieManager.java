@@ -41,27 +41,10 @@ public class MovieManager {
 
         PosterMovie[] result = new PosterMovie[resultLength];
         for (int i = 0; i < result.length; i++) {
-            result[i] = findAll()[resultLength - 1 - i];
-        }
-        return result;
-    }
-
-    public PosterMovie[] findLast2() {
-
-        int resultLength;
-        if (limit == movies.length) {
-            resultLength = movies.length;
-        } else {
-            resultLength = getLimit();
-        }
-
-        PosterMovie[] result = new PosterMovie[movies.length - (movies.length - resultLength)];
-        for (int i = 0; i < resultLength; i++) {
             result[i] = findAll()[movies.length - 1 - i];
         }
         return result;
     }
-
 
 }
 

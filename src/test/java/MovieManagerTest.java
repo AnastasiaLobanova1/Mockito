@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class MovieManagerTest {
 
     MovieManager manager = new MovieManager();
-    MovieManager manager2 = new MovieManager(3);
+    MovieManager manager2 = new MovieManager(5);
 
 
     PosterMovie movie1 = new PosterMovie(1, "Бладшот", "Боевик");
@@ -35,7 +35,6 @@ public class MovieManagerTest {
         manager.save(movie9);
         manager.save(movie10);
 
-
         manager2.save(movie1);
         manager2.save(movie2);
         manager2.save(movie3);
@@ -46,6 +45,7 @@ public class MovieManagerTest {
         manager2.save(movie8);
         manager2.save(movie9);
         manager2.save(movie10);
+
     }
 
 
@@ -62,8 +62,12 @@ public class MovieManagerTest {
     @Test
     public void testFindLastMovieWithLimit() {
 
-        PosterMovie[] expected = new PosterMovie[]{movie10, movie9, movie8};
-        PosterMovie[] actual = manager2.findLast2();
+
+        PosterMovie[] expected = new PosterMovie[]{movie10, movie9, movie8, movie7, movie6};
+        PosterMovie[] actual = manager2.findLast();
+
+
+
         Assertions.assertArrayEquals(expected, actual);
     }
 
